@@ -1,0 +1,50 @@
+	-리눅스 설치
+	-SELINUX 끄기
+	-SELINUX 적용
+		 SELINUX 변경사항은 시스템을 재부팅 해야 적용된다.
+	-IP 켜기
+	-IP가 부팅시마다 자동으로 켜지게 하기
+	-IP를 고정으로 할당하기(선택)
+	-sbsst 계정 추가
+	-sbsst 계정에 관리자 권한 부여
+	-epel-release 설치
+	-nginx 설치
+
+-nginx 켜기
+ systemctl start nginx
+-nginx 상태확인
+ systemctl status nginx
+-nginx 활성화
+ systemctl enable nginx
+-nginx 비활성화
+ systemctl disable nginx
+-firewalld 비활성화
+ systemctl disable firewalld
+
+sudo vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
+BOOTPROTO=static # 변경
+IPADDR=10.0.2.15
+GATEWAY=10.0.2.2
+NETMASK=255.255.255.0
+DNS1=8.8.8.8
+DNS2=8.8.4.4
+변경 후에 ipaddr 부터 밑에다 새로 기입.
+
+순서
+(sudo 이용해서 sbsst가 사용되게끔 하자. 관리자 권한 갖은 다음에 가능!)
+-리눅스 설치
+-sbsst 계정 추가
+-IP 켜기 (포트포워딩 추가할 때 HTTP 도 추가.(8033 포트 사용하고 ip동일하게 포트 80번으로.(기본적으로 80번을 사용.)))
+-sbsst 계정에 관리자 권한 부여
+-epel-release 설치
+-nginx 설치
+-nginx 켜기 (firewalld 끄기)
+-IP가 부팅시마다 자동으로 켜지게 하기
+-SELINUX 끄기
+-SELINUX 적용
+
+경로?명령어 칠 때 tab 키 누르면 다음에 올 경로 목록을 나타내 준다!
+*********************
+최대한 putty작업. 최대한 sbsst로 작업하는게 관건.(원격작업 지향)
+재부팅시 필요설정 최소화
+*********************
