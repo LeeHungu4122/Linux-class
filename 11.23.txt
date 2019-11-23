@@ -1,0 +1,8 @@
+sudo yum install mlocate
+sudo updatedb
+sudo locate html | fgrep dns | fgrep c (dns 와 c가 포함된 단어 찾기.)
+
+0.0.0.0 -> 모두 접근가능.
+127.0.0.1 -> 본인 네트워크만 허용하겠다.
+
+scp (왼쪽 파일) (오른쪽 목적지)
