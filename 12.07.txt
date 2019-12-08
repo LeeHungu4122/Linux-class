@@ -7,4 +7,4 @@ pure-ftpd 가 MySQL 의 사용 목적? mysql 에 회원?장부를 위임하는 것.
 
 pure-ftpd 와 ftp 는 다른 것.
 
-마리아db에서 %는 localhost?
+마리아db에서 %는 0.0.0.0(모든곳에서 접속 가능?)
