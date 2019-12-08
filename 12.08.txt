@@ -24,3 +24,4 @@ sudo ls -alh /usr/share/nginx/html
 sudo vim /etc/nginx/conf.d/virtual.conf
 내용 :server { listen 8888; server_name _; root /web/site1/public; }
 ==> 이거 꼭 확인
+
